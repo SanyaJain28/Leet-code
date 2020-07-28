@@ -1,0 +1,18 @@
+class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+        count=0
+        result=''
+        i=len(num1)-1
+        j=len(num2)-1
+        while i>=0 or j>=0 or count>0:
+            if i>=0:
+                count+=int(num1[i])# for division it should be integer
+            i-=1
+            if j>=0:
+                count+=int(num2[j])
+            j-=1
+            result+=str(count%10) # when we are appending to a string the val should be str
+            count=count//10
+        return result[::-1]
+            
+            
